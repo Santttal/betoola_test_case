@@ -41,7 +41,7 @@ To use the API, you can perform the following request
   "size": "Small"
 }
 ```
-#### Response:
+#### Responses:
 ```json
 {
   "success": true
