@@ -1,0 +1,30 @@
+version: '3.3'
+
+volumes:
+  mysql1:
+    driver: local
+
+services:
+  app:
+    build: .
+    depends_on:
+      - mysql
+    restart: "no"
+    ports:
+      - "8081:80"
+      - "8043:443"
+    volumes:
+      - .:/app
+    environment:
+      XDEBUG_CONFIG: client_host=${XDEBUG_HOST:-192.168.220.1} client_port=${XDEBUG_PORT:-9003}
+  mysql:
+    image: mysql:8.0
+    restart: "no"
+    volumes:
+      - mysql1:/var/lib/mysql
+    ports:
+      - "33306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: 'ecommerce'
+      MYSQL_USER: 'ecommerce'
