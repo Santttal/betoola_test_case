@@ -22,7 +22,7 @@ To get started with the API, you need to perform the following steps:
 ## Usage
 To use the API, you can perform the following request
 
-### Create/update price for a product
+### Create/update price for a product<br/>POST /api/products/prices
 #### Request body for Shoes category:
 ```json
 {
