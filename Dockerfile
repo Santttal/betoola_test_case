@@ -31,11 +31,6 @@ COPY docker/nginx.conf /etc/nginx/nginx.conf
 # Configure PHP-FPM
 COPY docker/fpm-pool.conf /usr/local/etc/php-fpm.conf
 
-#Install Xdebug
-RUN pecl install xdebug && \
-    docker-php-ext-enable xdebug
-COPY docker/docker-php-ext-xdebug.ini "$PHP_INI_DIR/conf.d/docker-php-ext-xdebug.ini"
-
 # Configure PHP
 COPY docker/php.ini "$PHP_INI_DIR/php.ini"
 
