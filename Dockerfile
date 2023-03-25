@@ -43,9 +43,6 @@ COPY . /app
 # Set Workdir to new app folder
 WORKDIR /app
 
-# pull in dependencies
-RUN composer --working-dir=/app install --dev -o
-
 # Expose the port nginx is reachable on
 EXPOSE 80
 
