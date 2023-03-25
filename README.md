@@ -15,7 +15,7 @@ To get started with the API, you need to perform the following steps:
 3. Build and start the Docker container:
 `docker-compose up -d --build`
 4. Run the database migrations to create the database schema and load sample data:
-`docker-compose exec php bin/console doctrine:migrations:migrate`
+`docker-compose exec app bin/console doctrine:migrations:migrate`
 
 ## Usage
 To use the API, you can perform the following request
